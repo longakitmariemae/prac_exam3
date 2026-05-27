@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('student_tbl', function (Blueprint $table) {
-            $table->string('id')->primary();
+            $table->id();
             $table->string('fname');
             $table->string('lname');
             $table->string('mname');
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('student_tbl');
     }
 };
